@@ -1,0 +1,11 @@
+# Install the chrony package.
+---
+- name: Define chrony_package
+  set_fact:
+    chrony_package: "{{ __chrony_package }}"
+  when: chrony_package is not defined
+
+- name: Install chrony
+  apt:
+    name: "{{ chrony_package }}"
+    state: "{{ chrony_package_state }}"

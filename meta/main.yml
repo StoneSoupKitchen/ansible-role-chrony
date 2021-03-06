@@ -1,0 +1,18 @@
+galaxy_info:
+  role_name: chrony
+  author: stonesoupkitchen
+  description: NTP client for Linux.
+  license: BSD-3-Clause
+  min_ansible_version: 2.9
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+  galaxy_tags:
+    - chrony
+    - ntp
+    - ntp-client
+    - ntpclient
+    - time
+dependencies: []
+
