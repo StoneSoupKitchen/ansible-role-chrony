@@ -3,3 +3,5 @@
   service:
     name: chronyd
     state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
