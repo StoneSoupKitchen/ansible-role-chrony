@@ -8,11 +8,10 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
+        - bullseye
   galaxy_tags:
     - chrony
     - ntp
-    - ntp-client
     - ntpclient
     - time
 dependencies: []
-

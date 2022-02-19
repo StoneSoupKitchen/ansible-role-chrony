@@ -1,0 +1,27 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Collect host package information
+    package_facts:
+      manager: "auto"
+
+  - name: Package chrony should be installed
+    package:
+      name: chrony
+      state: present
+    check_mode: true
+    register: install
+    failed_when: (install is changed) or (install is failed)
+
+  - name: File /etc/chrony/chrony.conf should exist with correct permissions
+    file:
+      path: /etc/chrony/chrony.conf
+      state: file
+      owner: root
+      group: root
+      mode: '0644'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
